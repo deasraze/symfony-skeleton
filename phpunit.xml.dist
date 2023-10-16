@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         bootstrap="tests/bootstrap.php"
+         executionOrder="depends,defects"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         cacheResultFile="var/cache/.phpunit.result.cache">
+    <php>
+        <server name="APP_ENV" value="test" force="true" />
+    </php>
+
+    <testsuites>
+        <testsuite name="unit">
+        </testsuite>
+        <testsuite name="functional">
+            <directory suffix=".php">tests/Functional</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage includeUncoveredFiles="true">
+    </coverage>
+
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+
+        <exclude>
+        </exclude>
+    </source>
+</phpunit>
